@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acme UI</title>
+  <meta name="description" content="A minimal, responsive web interface starter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img src="assets/logo.svg" alt="Acme" class="brand-logo" />
+      <span class="brand-name">Acme</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#dash">Dashboard</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#settings">Settings</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#dash">Overview</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#files">Files</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="#proj-1">Website Revamp</a></li>
+          <li><a href="#proj-2">Mobile App</a></li>
+          <li><a href="#proj-3">Infrastructure</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <div class="search">
+          <input type="search" placeholder="Search…" />
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost" id="newTaskBtn">New Task</button>
+          <button class="btn">Primary</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-2">
+          <header>
+            <h3>Overview</h3>
+            <button class="icon-btn" title="Refresh" aria-label="Refresh">⟳</button>
+          </header>
+          <div class="card-body">
+            <div class="metrics">
+              <div class="metric"><span class="label">Uptime</span><span class="value">99.98%</span></div>
+              <div class="metric"><span class="label">Users</span><span class="value">12,481</span></div>
+              <div class="metric"><span class="label">Errors</span><span class="value danger">12</span></div>
+              <div class="metric"><span class="label">Latency</span><span class="value">184ms</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <header><h3>Tasks</h3></header>
+          <ul class="list" id="taskList">
+            <li><label><input type="checkbox"/> Triage customer feedback</label></li>
+            <li><label><input type="checkbox"/> Update release notes</label></li>
+            <li><label><input type="checkbox"/> Review PR #1024</label></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header><h3>Activity</h3></header>
+          <div class="timeline">
+            <div class="event"><span class="dot"></span><div>Deployed v2.3.1 to prod</div><time>10:14</time></div>
+            <div class="event"><span class="dot"></span><div>DB backup completed</div><time>09:55</time></div>
+            <div class="event"><span class="dot"></span><div>New signups spike detected</div><time>08:30</time></div>
+          </div>
+        </article>
+
+        <article class="card span-2">
+          <header><h3>Table</h3></header>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>User</th><th>Plan</th><th>Status</th><th>Updated</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Jane Doe</td><td>Pro</td><td><span class="badge ok">Active</span></td><td>Today</td></tr>
+                <tr><td>John Smith</td><td>Free</td><td><span class="badge warn">Trial</span></td><td>Yesterday</td></tr>
+                <tr><td>Alex Lee</td><td>Business</td><td><span class="badge danger">Past Due</span></td><td>2 days ago</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Acme Inc.</p>
+  </footer>
+
+  <dialog id="newTaskDialog">
+    <form method="dialog" class="dialog-body" id="newTaskForm">
+      <h3>New Task</h3>
+      <label>
+        <span class="label">Title</span>
+        <input name="title" required placeholder="Task title" />
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn btn-ghost">Cancel</button>
+        <button value="ok" class="btn">Add</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
