@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+
+# Python http.server cache
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
